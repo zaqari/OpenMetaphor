@@ -3,7 +3,7 @@ from axesRSA.byRSAz import *
 import kaoetal14.Kao1 as km
 from scipy.stats import pearsonr
 
-dfde = s.pd.read_csv('validation data/kao-F-ANT.csv')
+dfde = s.pd.read_csv('data/kao-F-ANT.csv')
 # dfde = dfde.replace({'buffalo': 'bison', 'cow':'cattle'})
 cf = s.config(sources='data/config/GLOVe/SOURCE.csv', intents='data/config/GLOVe/INTENTS.csv',
               axes='data/config/GLOVe/AXES.csv')
@@ -12,12 +12,12 @@ l = modCOMPLETE(cf)
 # experimental_conditions = pd.read_json("validation data/Other Data/KaoQUD-Condition4Guides/KaoStimuli-4.json")
 # experimental_conditions['question'] = [val.split()[-1].replace('?','') for val in experimental_conditions['question'].values]
 
-experimental_conditions = pd.read_csv("validation data/Other Data/KaoQUD-Condition4Guides/KaoStimuli-4.csv")
+experimental_conditions = pd.read_csv("data/Kao Original/KaoStimuli-4.csv")
 experimental_conditions['question'] = [val.replace('?','') for val in experimental_conditions['question'].values]
 
-kaoModConvert = pd.read_csv("validation data/Other Data/kao-to-mod-dic.csv")
+kaoModConvert = pd.read_csv("data/Kao Original/kao-to-mod-dic.csv")
 
-human_data = pd.read_csv("validation data/Other Data/Kao Original/data39-long.csv")
+human_data = pd.read_csv("data/Kao Original/data39-long.csv")
 
 def cond4_data():
     cond4 = []
